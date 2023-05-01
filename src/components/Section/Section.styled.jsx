@@ -2,8 +2,12 @@ import styled from 'styled-components';
 
 export const SectionContainer = styled.section`
   max-width: 800px;
-  padding: 20px 50px;
+  padding: 50px 50px 0px;
   margin: 0 auto;
+
+  ${props => {
+    console.log(props.children);
+  }};
 `;
 
 export const SectionTitle = styled.h2`

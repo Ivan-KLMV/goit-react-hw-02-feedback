@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const ButtonList = styled.ul`
   display: flex;
   gap: 10px;
-  margin-bottom: 20px;
 `;
 
 export const Button = styled.button`
