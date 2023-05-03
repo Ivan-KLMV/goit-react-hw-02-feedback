@@ -4,10 +4,6 @@ export const SectionContainer = styled.section`
   max-width: 800px;
   padding: 50px 50px 0px;
   margin: 0 auto;
-
-  ${props => {
-    console.log(props.children);
-  }};
 `;
 
 export const SectionTitle = styled.h2`

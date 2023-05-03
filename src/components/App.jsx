@@ -9,7 +9,7 @@ export class App extends Component {
   };
 
   feedIncrement = ev => {
-    const caption = ev.target.innerHTML;
+    const caption = ev.currentTarget.innerHTML;
 
     this.setState(prevState => {
       return {
@@ -47,7 +47,7 @@ export class App extends Component {
           ) : (
             <Statistics
               namesOfItem={Object.keys(this.state)}
-              value={this.state}
+              values={this.state}
               total={this.countTotalFeedback()}
               positivePercentage={this.countPositiveFeedbackPercentage()}
             />

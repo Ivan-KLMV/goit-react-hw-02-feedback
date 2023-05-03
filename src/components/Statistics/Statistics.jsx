@@ -1,8 +1,9 @@
+import PropTypes from 'prop-types';
 import { StatList, StatText } from './Statistics.styled';
 
 export const Statistics = ({
   namesOfItem,
-  value,
+  values,
   total,
   positivePercentage,
 }) => {
@@ -11,7 +12,7 @@ export const Statistics = ({
       <StatList>
         {namesOfItem.map(name => (
           <li key={name}>
-            {name}:<span>{value[name]}</span>
+            {name}:<span>{values[name]}</span>
           </li>
         ))}
       </StatList>
@@ -24,4 +25,11 @@ export const Statistics = ({
       </StatText>
     </>
   );
+};
+
+Statistics.propTypes = {
+  namesOfItem: PropTypes.arrayOf(PropTypes.string.isRequired),
+  values: PropTypes.objectOf(PropTypes.number.isRequired),
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
 };
