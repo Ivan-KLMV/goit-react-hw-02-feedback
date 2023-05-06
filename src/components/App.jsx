@@ -8,14 +8,8 @@ export class App extends Component {
     bad: 0,
   };
 
-  feedIncrement = ev => {
-    const caption = ev.currentTarget.innerHTML;
-
-    this.setState(prevState => {
-      return {
-        [caption]: prevState[caption] + 1,
-      };
-    });
+  feedIncrement = key => {
+    this.setState(prevState => ({ [key]: prevState[key] + 1 }));
   };
 
   countTotalFeedback = () => {
@@ -33,7 +27,7 @@ export class App extends Component {
   render() {
     return (
       <>
-        <Section title={'please leave feedback'}>
+        <Section title="please leave feedback">
           {
             <FeedbackOptions
               options={Object.keys(this.state)}
@@ -41,7 +35,7 @@ export class App extends Component {
             />
           }
         </Section>
-        <Section title={'statistics'}>
+        <Section title="statistics">
           {this.countTotalFeedback() === 0 ? (
             <Notification message="There is no feedback" />
           ) : (
